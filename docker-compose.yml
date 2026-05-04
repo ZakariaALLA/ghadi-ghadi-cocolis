@@ -1,0 +1,46 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: ghadi_postgres
+    environment:
+      POSTGRES_DB: ghadidb
+      POSTGRES_USER: ghadiuser
+      POSTGRES_PASSWORD: ghadipassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ghadiuser -d ghadidb"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ghadi_backend
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/ghadidb
+      - SPRING_DATASOURCE_USERNAME=ghadiuser
+      - SPRING_DATASOURCE_PASSWORD=ghadipassword
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: ghadi_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
