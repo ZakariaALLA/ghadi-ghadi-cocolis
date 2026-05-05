@@ -1,0 +1,12 @@
+.error-text {
+  color: var(--error);
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  margin-left: 0.25rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
