@@ -1,47 +1,44 @@
 <div class="auth-container">
-  <div class="auth-card">
+  <div class="auth-card glass">
     <div class="auth-header">
-      <h1 class="auth-title">Welcome Back</h1>
-      <p class="auth-subtitle">Log in to Ghadi Ghadi Di Maak Hadi</p>
+      <div class="logo-sm">G</div>
+      <h1 class="auth-title">Bon retour !</h1>
+      <p class="auth-subtitle">Connectez-vous pour gérer vos envois</p>
+    </div>
+
+    <div *ngIf="error" class="alert-error">
+      {{ error }}
     </div>
 
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <label for="email" class="form-label">Email Address</label>
-        <input 
-          type="email" 
-          id="email" 
-          formControlName="email" 
-          class="form-input" 
-          placeholder="you@example.com"
-        >
+        <label for="email" class="form-label">Email</label>
+        <div class="input-wrapper">
+          <input type="email" id="email" formControlName="email" class="form-input" placeholder="votre@email.com">
+        </div>
         <div *ngIf="isSubmitted && loginForm.get('email')?.errors" class="error-text">
-          <span *ngIf="loginForm.get('email')?.errors?.['required']">Email is required</span>
-          <span *ngIf="loginForm.get('email')?.errors?.['email']">Please enter a valid email</span>
+          <span *ngIf="loginForm.get('email')?.errors?.['required']">L'email est requis</span>
+          <span *ngIf="loginForm.get('email')?.errors?.['email']">Email invalide</span>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="password" class="form-label">Password</label>
-        <input 
-          type="password" 
-          id="password" 
-          formControlName="password" 
-          class="form-input" 
-          placeholder="••••••••"
-        >
+        <label for="password" class="form-label">Mot de passe</label>
+        <div class="input-wrapper">
+          <input type="password" id="password" formControlName="password" class="form-input" placeholder="••••••••">
+        </div>
         <div *ngIf="isSubmitted && loginForm.get('password')?.errors" class="error-text">
-          <span *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</span>
-          <span *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters</span>
+          <span *ngIf="loginForm.get('password')?.errors?.['required']">Le mot de passe est requis</span>
+          <span *ngIf="loginForm.get('password')?.errors?.['minlength']">Minimum 6 caractères</span>
         </div>
       </div>
 
-      <button type="submit" class="btn-primary">Log In</button>
+      <button type="submit" class="btn-primary">Se connecter</button>
     </form>
 
     <div class="auth-footer">
-      Don't have an account? 
-      <a routerLink="/register" class="auth-link">Sign up</a>
+      Nouveau sur Ghadi Ghadi ?
+      <a routerLink="/register" class="auth-link">Créer un compte</a>
     </div>
   </div>
 </div>

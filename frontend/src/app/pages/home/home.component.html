@@ -1,151 +1,162 @@
 <div class="landing-page">
-  <!-- Navbar -->
-  <nav class="navbar">
-    <a routerLink="/" class="logo">
-      <svg xmlns="http://www.w3.org/-svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M5 18H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3"></path>
-        <path d="M5 12h14"></path>
-        <path d="M19 12h2a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"></path>
-        <path d="M12 6v6"></path>
-        <path d="m9 9 3-3 3 3"></path>
-      </svg>
-      Ghadi<span>Ghadi</span>
-    </a>
-    <div class="nav-links">
-      <a routerLink="/login" class="nav-link">Connexion</a>
-      <a routerLink="/register" class="btn-outline">S'inscrire</a>
-      <a routerLink="/login" class="btn-cta">Publier une annonce</a>
-    </div>
-  </nav>
+  <!-- Header/Navbar -->
+  <header class="header">
+    <nav class="navbar glass">
+      <a routerLink="/" class="logo">
+        <div class="logo-icon">G</div>
+        <span>Ghadi Ghadi</span>
+      </a>
+      <div class="nav-links">
+        <a routerLink="/search" class="nav-link">Rechercher</a>
+        <a routerLink="/how-it-works" class="nav-link">Comment ça marche</a>
+        <div class="nav-auth">
+          <a routerLink="/login" class="btn-text">Connexion</a>
+          <a routerLink="/register" class="btn-primary-sm">S'inscrire</a>
+        </div>
+      </div>
+    </nav>
+  </header>
 
   <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Simple et moins cher.<br>La livraison qu'il vous faut.</h1>
-      <p>Envoyez vos colis en toute sécurité avec des particuliers qui partagent votre route. Économique, écologique et convivial.</p>
-      
-      <div class="hero-actions">
-        <a routerLink="/login" class="btn-large btn-primary-large">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-          Expédier un colis
-        </a>
-        <a routerLink="/login" class="btn-large btn-secondary-large">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path><circle cx="7" cy="17" r="2"></circle><path d="M9 17h6"></path><circle cx="17" cy="17" r="2"></circle></svg>
-          Faire un trajet
-        </a>
-      </div>
-      
-      <!-- Price Estimator Mock -->
-      <div class="estimator">
-        <div class="estimator-input">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7z"/></svg>
-          <input type="text" placeholder="Ville de départ (ex: Casablanca)">
-        </div>
-        <div class="estimator-input">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-        </div>
-        <div class="estimator-input">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7z"/></svg>
-          <input type="text" placeholder="Ville d'arrivée (ex: Rabat)">
-        </div>
-        <button class="estimator-btn">Estimer le prix</button>
-      </div>
+  <section class="hero-section">
+    <div class="hero-bg">
+      <img src="assets/images/hero.png" alt="Ghadi Ghadi Hero">
+      <div class="hero-overlay"></div>
     </div>
-  </section>
+    <div class="hero-content container">
+      <div class="hero-text-area">
+        <span class="badge">N°1 du colis-voiturage au Maroc</span>
+        <h1>Expédiez vos colis <br><span class="gradient-text">simplement et sereinement.</span></h1>
+        <p>Ghadi Ghadi connecte les personnes qui souhaitent envoyer un colis avec des voyageurs qui font déjà le trajet. Plus humain, plus écologique, plus économique.</p>
+        
+        <div class="hero-cta-group">
+          <a routerLink="/register" class="btn-main">Expédier un colis</a>
+          <a routerLink="/publish-trajet" class="btn-outline-white">Proposer un trajet</a>
+        </div>
+      </div>
 
-  <!-- Value Props Section -->
-  <section class="value-props">
-    <h2 class="section-title">Pourquoi choisir Ghadi Ghadi ?</h2>
-    <div class="grid-3">
-      <div class="card">
-        <div class="card-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      <!-- Quick Action Card -->
+      <div class="search-box glass">
+        <div class="search-tabs">
+          <button class="tab active">J'envoie un colis</button>
+          <button class="tab">Je voyage</button>
         </div>
-        <h3>Économique</h3>
-        <p>Jusqu'à 80% moins cher que les transporteurs traditionnels. Profitez des trajets déjà prévus par d'autres.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        </div>
-        <h3>Sécurisé</h3>
-        <p>Paiement sécurisé et vérification d'identité des membres. Vos envois sont assurés contre le vol ou la casse.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
-        </div>
-        <h3>Écologique</h3>
-        <p>Rentabilisez les espaces vides dans les véhicules et contribuez à réduire les émissions de CO2.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- How it Works -->
-  <section class="how-it-works">
-    <h2 class="section-title">Comment ça marche ?</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="step-number">1</div>
-        <div class="step-content">
-          <h3>Publiez votre annonce</h3>
-          <p>Décrivez ce que vous souhaitez envoyer (taille, poids, dates) ou indiquez votre trajet si vous êtes conducteur.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-number">2</div>
-        <div class="step-content">
-          <h3>Recevez des offres</h3>
-          <p>La mise en relation se fait. Discutez via notre messagerie sécurisée pour vous mettre d'accord sur les modalités.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-number">3</div>
-        <div class="step-content">
-          <h3>Paiement et Livraison</h3>
-          <p>Payez en ligne en toute sécurité. Le code de livraison permet de débloquer l'argent une fois le colis bien reçu.</p>
+        <div class="search-form">
+          <div class="form-item">
+            <label>De</label>
+            <input type="text" placeholder="Casablanca, Maroc">
+          </div>
+          <div class="form-separator">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </div>
+          <div class="form-item">
+            <label>À</label>
+            <input type="text" placeholder="Marrakech, Maroc">
+          </div>
+          <button class="btn-search">Rechercher</button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Ecology Banner -->
-  <section class="ecology">
-    <svg class="ecology-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-7l-2-2"/><path d="M12 15l2-2"/><path d="M2 13c0 3.31 2.69 6 6 6s6-2.69 6-6-2.69-6-6-6-6 2.69-6 6z"/><path d="M22 13c0 3.31-2.69 6-6 6s-6-2.69-6-6 2.69-6 6-6 6 2.69 6 6z"/></svg>
-    <h2>Plus de 12 500 kg de CO2 économisés</h2>
-    <p>En utilisant Ghadi Ghadi, vous participez activement à la protection de l'environnement en optimisant les trajets existants au Maroc.</p>
+  <!-- Trust Bar -->
+  <section class="trust-bar">
+    <div class="container flex-between">
+      <div class="trust-item">
+        <span class="trust-val">100%</span>
+        <span class="trust-lab">Membres vérifiés</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-val">4.9/5</span>
+        <span class="trust-lab">Note moyenne</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-val">24/7</span>
+        <span class="trust-lab">Support client</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-val">Assuré</span>
+        <span class="trust-lab">Par AXA Assurance</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Propositions (Bento Grid Style) -->
+  <section class="features container">
+    <div class="section-header">
+      <h2>Pourquoi utiliser Ghadi Ghadi ?</h2>
+      <p>La solution de transport la plus conviviale du Royaume.</p>
+    </div>
+    
+    <div class="bento-grid">
+      <div class="bento-item main-feature glass">
+        <div class="feature-icon bg-blue">💰</div>
+        <h3>Économisez jusqu'à 70%</h3>
+        <p>Les tarifs sont fixés librement entre membres, ce qui rend le service imbattable par rapport aux transporteurs classiques.</p>
+      </div>
+      <div class="bento-item glass">
+        <div class="feature-icon bg-green">🌿</div>
+        <h3>Impact Écologique</h3>
+        <p>Réduisez votre empreinte carbone en utilisant des coffres déjà en route.</p>
+      </div>
+      <div class="bento-item glass">
+        <div class="feature-icon bg-purple">🤝</div>
+        <h3>Confiance & Sécurité</h3>
+        <p>Paiements sécurisés et profils vérifiés pour une sérénité totale.</p>
+      </div>
+      <div class="bento-item featured-bento glass">
+        <div class="feature-icon bg-orange">✨</div>
+        <h3>Service de porte à porte</h3>
+        <p>Pas de points de dépôt contraignants. Le voyageur récupère et livre votre colis directement aux adresses convenues.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner container">
+    <div class="cta-card">
+      <div class="cta-content">
+        <h2>Prêt à commencer l'aventure ?</h2>
+        <p>Rejoignez la communauté Ghadi Ghadi dès aujourd'hui et facilitez vos envois partout au Maroc.</p>
+        <button class="btn-white" routerLink="/register">Créer mon compte gratuit</button>
+      </div>
+      <div class="cta-visual">
+        <!-- Abstract shape or icon -->
+      </div>
+    </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-col">
-        <h4>À propos</h4>
-        <ul>
-          <li><a href="#">Qui sommes-nous ?</a></li>
-          <li><a href="#">Comment ça marche</a></li>
-          <li><a href="#">Presse</a></li>
-        </ul>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="logo">Ghadi<span>Ghadi</span></div>
+        <p>La plateforme de colis-voiturage leader au Maroc. Connectez-vous, partagez, économisez.</p>
+        <div class="social-links">
+          <!-- Social icons -->
+        </div>
       </div>
-      <div class="footer-col">
-        <h4>Aide & Confiance</h4>
-        <ul>
-          <li><a href="#">Centre d'aide</a></li>
-          <li><a href="#">Assurance</a></li>
-          <li><a href="#">Paiement sécurisé</a></li>
-        </ul>
+      <div class="footer-links">
+        <h4>Plateforme</h4>
+        <a routerLink="/">Accueil</a>
+        <a routerLink="/search">Rechercher</a>
+        <a routerLink="/publish-trajet">Publier un trajet</a>
       </div>
-      <div class="footer-col">
+      <div class="footer-links">
+        <h4>Support</h4>
+        <a href="#">Centre d'aide</a>
+        <a href="#">Contact</a>
+        <a href="#">Confiance & Sécurité</a>
+      </div>
+      <div class="footer-links">
         <h4>Légal</h4>
-        <ul>
-          <li><a href="#">CGU</a></li>
-          <li><a href="#">Confidentialité</a></li>
-          <li><a href="#">Mentions légales</a></li>
-        </ul>
+        <a href="#">CGU</a>
+        <a href="#">Confidentialité</a>
+        <a href="#">Mentions Légales</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Ghadi Ghadi di maak hadi. Tous droits réservés.</p>
+    <div class="footer-bottom container">
+      <p>&copy; 2026 Ghadi Ghadi. Fait avec ❤️ pour le Maroc.</p>
     </div>
   </footer>
 </div>

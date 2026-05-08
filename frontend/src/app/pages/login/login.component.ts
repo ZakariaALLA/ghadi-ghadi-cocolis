@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -13,8 +14,13 @@ import { CommonModule } from '@angular/common';
 export class LoginComponent {
   loginForm: FormGroup;
   isSubmitted = false;
+  error: string | null = null;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
@@ -24,8 +30,10 @@ export class LoginComponent {
   onSubmit() {
     this.isSubmitted = true;
     if (this.loginForm.valid) {
-      console.log('Login attempt:', this.loginForm.value);
-      // TODO: Connect to authentication service
+      this.authService.login(this.loginForm.value).subscribe({
+        next: () => this.router.navigate(['/']),
+        error: (err) => this.error = err.error?.message || 'Identifiants invalides'
+      });
     }
   }
 }

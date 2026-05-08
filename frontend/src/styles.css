@@ -1,20 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
 
 :root {
-  /* Color Palette - Cocolis Inspired Light Theme */
-  --primary: #0ea5e9;
-  --primary-hover: #0284c7;
-  --secondary: #10b981; /* Ecological green */
+  /* Color Palette - Premium Cocolis Inspired */
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-light: #eff6ff;
+  --secondary: #059669; /* Richer green */
+  --secondary-hover: #047857;
   --background: #f8fafc;
   --surface: #ffffff;
   --surface-border: #e2e8f0;
-  --text-main: #0f172a;
+  --text-main: #1e293b;
   --text-muted: #64748b;
-  --error: #ef4444;
-  --success: #10b981;
+  --text-inverse: #ffffff;
+  
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
 
   /* Typography */
-  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-family: 'Outfit', 'Inter', -apple-system, sans-serif;
 }
 
 * {
@@ -155,6 +161,42 @@ body {
 .auth-link:hover {
   color: var(--primary-hover);
   text-decoration: underline;
+}
+
+.alert-error {
+  background: #fef2f2;
+  border: 1px solid #fee2e2;
+  color: #b91c1c;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.logo-sm {
+  width: 48px;
+  height: 48px;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0 auto 1.5rem;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.error-text {
+  color: #ef4444;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
 }
 
 @keyframes slideUp {

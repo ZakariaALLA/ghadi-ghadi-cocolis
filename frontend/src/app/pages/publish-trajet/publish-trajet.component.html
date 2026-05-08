@@ -1,0 +1,61 @@
+<div class="auth-container">
+  <div class="auth-card glass">
+    <div class="auth-header">
+      <div class="logo-sm">G</div>
+      <h1 class="auth-title">Proposer un trajet</h1>
+      <p class="auth-subtitle">Partagez votre route et rentabilisez votre voyage</p>
+    </div>
+
+    <form [formGroup]="tripForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="departureCity" class="form-label">Ville de départ</label>
+        <div class="input-wrapper">
+          <input 
+            type="text" 
+            id="departureCity" 
+            formControlName="departureCity" 
+            class="form-input" 
+            placeholder="Ex: Casablanca"
+          >
+        </div>
+        <div *ngIf="isSubmitted && tripForm.get('departureCity')?.errors" class="error-text">
+          <span>La ville de départ est requise</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="arrivalCity" class="form-label">Ville d'arrivée</label>
+        <div class="input-wrapper">
+          <input 
+            type="text" 
+            id="arrivalCity" 
+            formControlName="arrivalCity" 
+            class="form-input" 
+            placeholder="Ex: Marrakech"
+          >
+        </div>
+        <div *ngIf="isSubmitted && tripForm.get('arrivalCity')?.errors" class="error-text">
+          <span>La ville d'arrivée est requise</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="tripDate" class="form-label">Date du trajet</label>
+        <div class="input-wrapper">
+          <input 
+            type="date" 
+            id="tripDate" 
+            formControlName="tripDate" 
+            class="form-input"
+          >
+        </div>
+        <div *ngIf="isSubmitted && tripForm.get('tripDate')?.errors" class="error-text">
+          <span>La date est requise</span>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-primary">Publier le trajet</button>
+      <button type="button" class="btn-outline-white w-100 mt-2" routerLink="/">Annuler</button>
+    </form>
+  </div>
+</div>

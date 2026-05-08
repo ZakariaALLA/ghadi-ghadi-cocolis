@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -13,8 +14,13 @@ import { CommonModule } from '@angular/common';
 export class RegisterComponent {
   registerForm: FormGroup;
   isSubmitted = false;
+  error: string | null = null;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {
     this.registerForm = this.fb.group({
       fullName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -35,8 +41,10 @@ export class RegisterComponent {
   onSubmit() {
     this.isSubmitted = true;
     if (this.registerForm.valid) {
-      console.log('Registration attempt:', this.registerForm.value);
-      // TODO: Connect to registration service
+      this.authService.register(this.registerForm.value).subscribe({
+        next: () => this.router.navigate(['/']),
+        error: (err) => this.error = err.error?.message || 'Une erreur est survenue'
+      });
     }
   }
 }
